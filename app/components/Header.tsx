@@ -1,12 +1,13 @@
 // app/components/Header.tsx
 import Link from "next/link"
+import { dadosAdv } from "../lib/constants"
 
 export default function Header() {
   return (
     <header className="border-b border-gray-200 bg-white">
       <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
         <Link href="/" className="font-serif text-2xl text-navy">
-          Lúcio Lopes Pereira
+          {dadosAdv.nome}
         </Link>
         <nav className="hidden md:flex gap-8 text-sm uppercase tracking-wider text-gray-600">
           <Link href="/areas" className="hover:text-navy transition-colors">Áreas</Link>

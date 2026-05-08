@@ -1,11 +1,14 @@
 // app/page.tsx
-import Link from "next/link"
+import Link from "next/link";
+import { AreaAtuacao } from "./types";
 
-const areas = [
-  { titulo: "Direito Canábico", desc: "Assessoria regulatória para cannabis medicinal, autorizações na ANVISA, habeas corpus preventivo e compliance para associações e empresas do setor." },
-  { titulo: "Direito Societário", desc: "Constituição de empresas, fusões, aquisições e governança corporativa." },
-  { titulo: "Direito Tributário", desc: "Planejamento tributário, defesas administrativas e judiciais." },
-  { titulo: "Contratos", desc: "Elaboração e revisão de contratos empresariais complexos." }
+
+
+const areas: AreaAtuacao[] = [
+  { titulo: "Direito Canábico", descricao: "Assessoria regulatória para cannabis medicinal, autorizações na ANVISA, habeas corpus preventivo e compliance para associações e empresas do setor." },
+  { titulo: "Direito Societário", descricao: "Constituição de empresas, fusões, aquisições e governança corporativa." },
+  { titulo: "Direito Tributário", descricao: "Planejamento tributário, defesas administrativas e judiciais." },
+  { titulo: "Contratos", descricao: "Elaboração e revisão de contratos empresariais complexos." }
 ]
 
 export default function Home() {
@@ -14,12 +17,12 @@ export default function Home() {
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-6 py-20 md:py-32 grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="uppercase tracking-[0.3em] text-sm text-gold">Desde 1998</p>
+            <p className="uppercase tracking-[0.3em] text-sm text-gold">Desde 2022</p>
             <h1 className="font-serif text-5xl md:text-6xl leading-tight mt-4">
-              Soluções jurídicas estratégicas para sua empresa
+              Soluções jurídicas estratégicas para sua vida
             </h1>
             <p className="mt-6 text-lg text-gray-600 leading-relaxed">
-              Atuamos com excelência técnica e visão de negócios para proteger e potencializar o patrimônio dos nossos clientes.
+              Atuamos com excelência técnica e visão de negócios para proteger e potencializar o interesse dos nossos clientes.
             </p>
             <Link href="/contato" className="inline-block mt-8 bg-navy text-white px-8 py-3 hover:bg-gold hover:text-navy transition">
               Fale com um especialista
@@ -40,7 +43,7 @@ export default function Home() {
             {areas.map((area) => (
               <div key={area.titulo} className="bg-white p-8 border-t-4 border-gold">
                 <h3 className="font-serif text-2xl">{area.titulo}</h3>
-                <p className="mt-4 text-gray-600">{area.desc}</p>
+                <p className="mt-4 text-gray-600">{area.descricao}</p>
                 <Link href="/areas" className="inline-block mt-6 text-sm uppercase tracking-wider text-navy hover:text-gold">
                   Saiba mais →
                 </Link>

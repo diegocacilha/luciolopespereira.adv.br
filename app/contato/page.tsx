@@ -1,4 +1,5 @@
 // app/contato/page.tsx
+import { dadosAdv } from "../lib/constants";
 export default function Contato() {
   return (
     <main className="max-w-7xl mx-auto px-6 py-20">
@@ -22,10 +23,9 @@ export default function Contato() {
 
         <div className="text-gray-600">
           <h2 className="font-serif text-2xl text-navy">Escritório Blumenau</h2>
-          <p className="mt-4">Rua XV de Novembro, 1234 - Sala 501</p>
-          <p>Centro, Blumenau - SC</p>
-          <p className="mt-4">+55 47 3333-4444</p>
-          <p>contato@silvaadv.com.br</p>
+          <p className="mt-4">{dadosAdv.endereco}</p>
+          <p className="mt-4">{dadosAdv.telefone}</p>
+          <p>{dadosAdv.email}</p>
           <p className="mt-8 text-sm">Atendimento presencial mediante agendamento prévio, conforme Código de Ética da OAB.</p>
         </div>
       </div>
