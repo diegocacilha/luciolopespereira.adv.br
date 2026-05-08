@@ -1,65 +1,63 @@
-import Image from "next/image";
+// app/page.tsx
+import Link from "next/link"
+
+const areas = [
+  { titulo: "Direito Canábico", desc: "Assessoria regulatória para cannabis medicinal, autorizações na ANVISA, habeas corpus preventivo e compliance para associações e empresas do setor." },
+  { titulo: "Direito Societário", desc: "Constituição de empresas, fusões, aquisições e governança corporativa." },
+  { titulo: "Direito Tributário", desc: "Planejamento tributário, defesas administrativas e judiciais." },
+  { titulo: "Contratos", desc: "Elaboração e revisão de contratos empresariais complexos." }
+]
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main>
+      <section className="bg-white">
+        <div className="max-w-7xl mx-auto px-6 py-20 md:py-32 grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="uppercase tracking-[0.3em] text-sm text-gold">Desde 1998</p>
+            <h1 className="font-serif text-5xl md:text-6xl leading-tight mt-4">
+              Soluções jurídicas estratégicas para sua empresa
+            </h1>
+            <p className="mt-6 text-lg text-gray-600 leading-relaxed">
+              Atuamos com excelência técnica e visão de negócios para proteger e potencializar o patrimônio dos nossos clientes.
+            </p>
+            <Link href="/contato" className="inline-block mt-8 bg-navy text-white px-8 py-3 hover:bg-gold hover:text-navy transition">
+              Fale com um especialista
+            </Link>
+          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80" 
+            alt="Escritório de advocacia"
+            className="w-full h-auto"
+          />
+        </div>
+      </section>
+
+      <section className="py-20 md:py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="font-serif text-4xl">Áreas de Atuação</h2>
+          <div className="mt-12 grid md:grid-cols-3 gap-8">
+            {areas.map((area) => (
+              <div key={area.titulo} className="bg-white p-8 border-t-4 border-gold">
+                <h3 className="font-serif text-2xl">{area.titulo}</h3>
+                <p className="mt-4 text-gray-600">{area.desc}</p>
+                <Link href="/areas" className="inline-block mt-6 text-sm uppercase tracking-wider text-navy hover:text-gold">
+                  Saiba mais →
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-20">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <p className="font-serif text-2xl md:text-3xl leading-relaxed">
+            “A assessoria do escritório foi fundamental para a reestruturação societária da nossa empresa. Técnica e agilidade impecáveis.”
           </p>
+          <p className="mt-6 text-gray-600">— Carlos M., CEO Indústria Têxtil</p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+      </section>
+    </main>
+  )
 }
